@@ -10,7 +10,7 @@ class TradingAccountsPage(Base):
     def click_request_account(self):
         self.wait_until_element_be_clickable(
             By.XPATH,
-            "//a[@class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-4 py-2 has-[>svg]:px-3 bg-emerald-500 text-slate-950 hover:bg-emerald-400']"
+            "//a[normalize-space()='Request account']"
         ).click()
 
 class RequestAccountForm(Base):
@@ -18,10 +18,12 @@ class RequestAccountForm(Base):
         super().__init__(driver)
 
     def select_account_type(self,account_type):
-        self.wait_until_element_be_clickable(
+        element = self.wait_until_element_be_clickable(
             By.XPATH,
             "(//button[@role='combobox'])[1]"
-        ).click()
+        )
+        self.scroll_to_element(element)
+        element.click()
         if account_type == "demo":
             self.wait_until_element_be_clickable(
                 By.XPATH,
@@ -34,10 +36,12 @@ class RequestAccountForm(Base):
             ).click()
 
     def select_base_currency(self,base_currency):
-        self.wait_until_element_be_clickable(
+        element = self.wait_until_element_be_clickable(
             By.XPATH,
             "(//button[@role='combobox'])[2]"
-        ).click()
+        )
+        self.scroll_to_element(element)
+        element.click()
 
         if base_currency == "USD":
             self.wait_until_element_be_clickable(
@@ -56,10 +60,12 @@ class RequestAccountForm(Base):
             ).click()
 
     def select_leverage(self,leverage):
-        self.wait_until_element_be_clickable(
+        element =  self.wait_until_element_be_clickable(
             By.XPATH,
             "(//button[@role='combobox'])[3]"
-        ).click()
+        )
+        self.scroll_to_element(element)
+        element.click()
         if leverage == "1:50":
             self.wait_until_element_be_clickable(
                 By.XPATH,
@@ -82,16 +88,20 @@ class RequestAccountForm(Base):
             ).click()
 
     def enter_trading_purpose(self,trading_purpose):
-        self.wait_until_element_be_presence(
+        element = self.wait_until_element_be_presence(
             By.XPATH,
             "//input[@id='purpose']"
-        ).send_keys(trading_purpose)
+        )
+        self.scroll_to_element(element)
+        element.send_keys(trading_purpose)
 
     def click_submit(self):
-        self.wait_until_element_be_clickable(
+        element = self.wait_until_element_be_clickable(
             By.XPATH,
             "//button[normalize-space()='Submit request']"
-        ).click()
+        )
+        self.scroll_to_element(element)
+        element.click()
 
     def click_cancel(self):
         self.wait_until_element_be_clickable(

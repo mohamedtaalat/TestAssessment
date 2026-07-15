@@ -1,0 +1,42 @@
+[
+  {
+    "Scenario": "Create request account demo and base currency USD and leverage 1:50 and trading purpose note",
+    "account_type": "demo",
+    "base_currency": "USD",
+    "leverage": "1:50",
+    "trading_purpose": "note",
+    "expected": "Created"
+  },
+  {
+    "Scenario": "Create request account live and base currency USD and leverage 1:50 and trading purpose note",
+    "account_type": "live",
+    "base_currency": "USD",
+    "leverage": "1:50",
+    "trading_purpose": "note",
+    "expected": "Created"
+  },
+  {
+    "Scenario": "Create request account demo and base currency EUR and leverage 1:50 and trading purpose note",
+    "account_type": "demo",
+    "base_currency": "EUR",
+    "leverage": "1:50",
+    "trading_purpose": "note",
+    "expected": "Created"
+  },
+  {
+    "Scenario": "Create request account demo and base currency USD and leverage 1:100 and trading purpose note",
+    "account_type": "demo",
+    "base_currency": "USD",
+    "leverage": "1:100",
+    "trading_purpose": "note",
+    "expected": "Created"
+  },
+  {
+    "Scenario": "Create request account demo and base currency USD and leverage 1:50 and without trading purpose",
+    "account_type": "demo",
+    "base_currency": "USD",
+    "leverage": "1:50",
+    "trading_purpose": "",
+    "expected": "Created"
+  }
+]
