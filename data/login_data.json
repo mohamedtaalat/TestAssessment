@@ -1,0 +1,26 @@
+[
+  {
+    "Scenario": "Log in with valid email and password",
+    "email": "test@example.com",
+    "password": "password",
+    "expected": "Login"
+  },
+  {
+    "Scenario": "Log in with invalid email and password",
+    "email": "testl@example.com",
+    "password": "password",
+    "expected": "Not Login"
+  },
+  {
+    "Scenario": "Log in with empty fields",
+    "email": "",
+    "password": "",
+    "expected": "Not Login"
+  },
+  {
+    "Scenario": "Log in with valid email and invalid password",
+    "email": "test@example.com",
+    "password": "password1",
+    "expected": "Not Login"
+  }
+]
