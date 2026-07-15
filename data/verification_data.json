@@ -1,0 +1,20 @@
+[
+  {
+    "Scenario": "Upload valid Passport",
+    "file": "C:\\Users\\admin\\PycharmProjects\\TestAssessment\\asset\\automation.png",
+    "document_type": "Passport",
+    "expected": "Accepted"
+  },
+  {
+    "Scenario": "Upload valid National ID",
+    "file": "C:\\Users\\admin\\PycharmProjects\\TestAssessment\\asset\\automation.png",
+    "document_type": "National ID",
+    "expected": "Accepted"
+  },
+  {
+    "Scenario": "Upload valid Proof of address",
+    "file": "C:\\Users\\admin\\PycharmProjects\\TestAssessment\\asset\\Universal Loyalty Infrastructure Platform.pdf",
+    "document_type": "Proof of address",
+    "expected": "Accepted"
+  }
+]
