@@ -74,10 +74,12 @@ class SideBar(Base):
         ).click()
 
     def click_on_account(self):
-        self.wait_until_element_be_clickable(
+        element = self.wait_until_element_be_presence(
             By.XPATH,
-            "//button[@id='reka-dropdown-menu-trigger-v-109']"
-        ).click()
+            "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/ul[1]/li[1]/button[1]"
+        )
+        self.scroll_to_element(element)
+        element.click()
 
     def click_logout(self):
         self.click_on_account()

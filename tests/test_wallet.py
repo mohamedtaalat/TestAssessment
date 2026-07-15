@@ -1,12 +1,8 @@
 import json
 import time
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-
 import pytest
-from selenium.webdriver.support.wait import WebDriverWait
-
+from pages.admin_only_pages.approve_deposit_page import ApproveDepositPage
+from pages.admin_only_pages.approve_withdrawals_page import ApproveWithdrawalsPage
 from pages.common_pages.wallet_page import WalletPage
 from pages.header import Header
 from pages.login_page import LoginPage
@@ -63,3 +59,54 @@ class TestWallet:
         #     assert toast.text == "Withdraw request submitted."
         # elif data["expected"] == "Refused":
         #     assert toast.text != "Withdraw request submitted."
+
+    def test_scenario_deposit_and_approve_from_admin(self,driver):
+        hpd = Header(driver)
+        hpd.click_login()
+        lgp = LoginPage(driver)
+        lgp.login("test@example.com", "password")
+        sdp = SideBar(driver)
+        sdp.click_wallet()
+        wp = WalletPage(driver)
+        wp.create_deposit(100,"Card")
+        sdp.click_logout()
+        hpd.click_login()
+        lgp.login("admin@tradevault.test","password")
+        sdp.click_approve_deposit()
+        apdp = ApproveDepositPage(driver)
+        apdp.click_approve(1)
+        time.sleep(2)
+
+    def test_scenario_withdraw_and_approve_from_admin(self,driver):
+        hpd = Header(driver)
+        hpd.click_login()
+        lgp = LoginPage(driver)
+        lgp.login("test@example.com", "password")
+        sdp = SideBar(driver)
+        sdp.click_wallet()
+        wp = WalletPage(driver)
+        wp.create_withdraw(100,"Card")
+        sdp.click_logout()
+        hpd.click_login()
+        lgp.login("admin@tradevault.test","password")
+        sdp.click_approve_withdraw()
+        wdp = ApproveWithdrawalsPage(driver)
+        wdp.click_approve(1)
+        time.sleep(2)
+
+    def test_scenario_withdraw_and_reject_from_admin(self,driver):
+        hpd = Header(driver)
+        hpd.click_login()
+        lgp = LoginPage(driver)
+        lgp.login("test@example.com", "password")
+        sdp = SideBar(driver)
+        sdp.click_wallet()
+        wp = WalletPage(driver)
+        wp.create_withdraw(100,"Card")
+        sdp.click_logout()
+        hpd.click_login()
+        lgp.login("admin@tradevault.test","password")
+        sdp.click_approve_withdraw()
+        wdp = ApproveWithdrawalsPage(driver)
+        wdp.click_reject(1)
+        time.sleep(2)
