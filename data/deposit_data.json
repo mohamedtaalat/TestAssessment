@@ -1,0 +1,38 @@
+[
+  {
+    "Scenario": "Make a deposit with 100 with Bank transfer",
+    "deposit_amount": "100",
+    "deposit_method": "Bank Transfer",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a deposit with 100 with Card",
+    "deposit_amount": "100",
+    "deposit_method": "Card",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a deposit with 100 with Crypto",
+    "deposit_amount": "100",
+    "deposit_method": "Crypto",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a deposit with -100 with Bank transfer",
+    "deposit_amount": "-100",
+    "deposit_method": "Bank Transfer",
+    "expected": "Refused"
+  },
+   {
+    "Scenario": "Make a deposit with 0 with Card",
+    "deposit_amount": "0",
+    "deposit_method": "Card",
+    "expected": "Refused"
+  },
+   {
+    "Scenario": "Make a deposit with empty field with Bank transfer",
+    "deposit_amount": "",
+    "deposit_method": "Bank Transfer",
+    "expected": "Refused"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "Scenario": "Make a Withdraw with 100 with Bank transfer",
+    "withdraw_amount": "100",
+    "withdraw_method": "Bank Transfer",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a Withdraw with 100 with Card",
+    "withdraw_amount": "100",
+    "withdraw_method": "Card",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a Withdraw with 100 with Crypto",
+    "withdraw_amount": "100",
+    "withdraw_method": "Crypto",
+    "expected": "Created"
+  },
+   {
+    "Scenario": "Make a Withdraw with -100 with Bank transfer",
+    "withdraw_amount": "-100",
+    "withdraw_method": "Bank Transfer",
+    "expected": "Refused"
+  },
+   {
+    "Scenario": "Make a Withdraw with 0 with Card",
+    "withdraw_amount": "0",
+    "withdraw_method": "Card",
+    "expected": "Refused"
+  },
+   {
+    "Scenario": "Make a Withdraw with empty field with Bank transfer",
+    "withdraw_amount": "",
+    "withdraw_method": "Bank Transfer",
+    "expected": "Refused"
+  }
+]
