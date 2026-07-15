@@ -1,0 +1,82 @@
+[
+  {
+    "Scenario": "Sign up with valid data",
+    "full_name": "Mohamed Ali",
+    "email": "test2@test.com",
+    "password": "12345678",
+    "confirm_password": "12345678",
+    "expected": "Signup"
+  },
+    {
+    "Scenario": "Sign up with empty full name",
+    "full_name": "",
+    "email": "test90382392318083123230891@test.com",
+    "password": "12345678",
+    "confirm_password": "12345678",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with empty email",
+    "full_name": "Mohamed Ali",
+    "email": "",
+    "password": "12345678",
+    "confirm_password": "12345678",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with empty password",
+    "full_name": "Mohamed Ali",
+    "email": "test40234238472341@test.com",
+    "password": "",
+    "confirm_password": "12345678",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with empty confirm password",
+    "full_name": "Mohamed Ali",
+    "email": "test123424234234234234@test.com",
+    "password": "12345678",
+    "confirm_password": "",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with incorrect confirm password",
+    "full_name": "Mohamed Ali",
+    "email": "test1324234@test.com",
+    "password": "12345678",
+    "confirm_password": "123456789",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with email already exist",
+    "full_name": "Mohamed Ali",
+    "email": "test1@test.com",
+    "password": "12345678",
+    "confirm_password": "12345678",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with empty fields",
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "confirm_password": "",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with password less than 6 char",
+    "full_name": "Mohamed Ali",
+    "email": "test123423u4@test.com",
+    "password": "1234",
+    "confirm_password": "1234",
+    "expected": "Not Signup"
+  },
+    {
+    "Scenario": "Sign up with name less than 2 char",
+    "full_name": "M",
+    "email": "test18902489032@test.com",
+    "password": "12345678",
+    "confirm_password": "12345678",
+    "expected": "Not Signup"
+  }
+]

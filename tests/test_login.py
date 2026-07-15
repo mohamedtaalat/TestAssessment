@@ -19,6 +19,7 @@ class TestLogin:
         lgp = LoginPage(driver)
         lgp.login(data["email"], data["password"])
         time.sleep(2)
+        print()
         print(data["Scenario"])
         print(f"Expected : {data['expected']}")
         if data["expected"] == "Login" :
